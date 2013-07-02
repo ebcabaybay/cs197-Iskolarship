@@ -1,8 +1,0 @@
-donationCtrl = ($scope) ->
-   $scope.supporters = 0;
-   $scope.donations = 0;
-
-   $scope.remaining = () ->
-      return $scope.supporters;
-
-   alert("asdasda");
