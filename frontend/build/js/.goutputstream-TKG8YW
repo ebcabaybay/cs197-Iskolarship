@@ -1,0 +1,4 @@
+donationCtrl($scope) {
+	$scope.supporters = 0;
+	$scope.donations = 0;
+}

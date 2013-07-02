@@ -1,0 +1,8 @@
+.span8.box
+
+.span4
+   .row(style="border:2px solid;")
+     .span2.center
+        a.btn.btn-primary.btn-large Donate
+     .span2.center
+        a.btn.btn-primary.btn-large Support

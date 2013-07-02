@@ -1,0 +1,10 @@
+.span9.box
+
+.span3
+  .container
+      .row 
+         .span1.btn-wrapper
+            a.btn.btn-primary.btn-large Donate
+         .span1.btn-wrapper
+            a.btn.btn-primary.btn-large Support
+

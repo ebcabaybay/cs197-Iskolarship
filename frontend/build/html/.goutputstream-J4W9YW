@@ -1,0 +1,58 @@
+.span8.box
+
+.span6
+   .desc Crowd-funded education for everyone.
+   .subdesc Together, we can make education more accessible to a lot of people.
+   .row
+     .span2.offset1.btn-wrapper
+        a.btn.btn-primary.btn-large#btn-donate(ng-click="addDonations()") Donate
+     .span2.btn-wrapper
+        a.btn.btn-primary.btn-large#btn-support(ng-click="support()") Support
+.row
+   .span12.offset1.elijah
+       table(style="width:100%;")
+         tr(style="width:100%;")
+           td(style="width:33%")
+             span(style="text-align:left;")
+                h3 Supporters: {{getSupporters()}}
+           td(style="width:33%")
+             span(style="text-align:left;")
+                h3 Donations: Php {{getTotalDonations()}}
+           td(style="width:33%")
+             span(style="text-align:right;")
+                h3 Goal: Php {{goal}}
+       .progress.progress-striped.active
+           .bar(style="width:{{(getTotalDonations()/goal)*100}}%")
+
+.row
+   form(ng-submit="addDonations()").userinput    
+      h4 Name
+      input(ng-model="donorName")
+      h4 Amount of Donation
+      input(ng-model="donationAmount")
+      <br>
+      <br>
+      input(type="submit",value="Donate").btn
+
+.row
+   .span12.offset1
+       h2 List of donations
+       table.table.table-striped.table-bordered.table-hover
+           thead
+              tr
+                 td Name
+                 td Amount donated
+           tbody
+              tr(ng-repeat="donation in donations")
+                 td {{donation.name}}
+                 td Php {{donation.amount}}
+
+.row
+   .span12.offset1
+       h2 Comments
+       table.table.table-striped.table-bordered.table-hover
+              tr(ng-repeat="comment in comments")
+                 td {{comment}}
+              tr
+                 td
+                   input(style="width:100%")
