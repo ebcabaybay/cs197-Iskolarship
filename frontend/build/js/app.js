@@ -5,15 +5,23 @@
 
   momentum.config([
     "$routeProvider", function($routeProvider) {
-      $routeProvider.when("/exercise", {
-        templateUrl: "/html/exercise.html"
+      $routeProvider.when("/post-scholarship", {
+        templateUrl: "/html/post-scholarship.html"
       });
-      $routeProvider.when("/home", {
-        templateUrl: "/html/messages.html",
+      $routeProvider.when("/post-studentdetails", {
+        templateUrl: "/html/post-studentdetails.html",
         controller: 'MessagesController'
       });
-      $routeProvider.when("/message", {
-        templateUrl: "/html/message.html",
+      $routeProvider.when("/view-scholarships", {
+        templateUrl: "/html/view-scholarships.html",
+        controller: 'MessageController'
+      });
+      $routeProvider.when("/view-studentdetails", {
+        templateUrl: "/html/view-studentdetails.html",
+        controller: 'MessageController'
+      });
+      $routeProvider.when("/home", {
+        templateUrl: "/html/home.html",
         controller: 'MessageController'
       });
       $routeProvider.when("/404", {

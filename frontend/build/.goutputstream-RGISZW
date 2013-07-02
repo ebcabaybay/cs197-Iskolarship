@@ -24,27 +24,14 @@ html(ng-app="Momentum")
     script(src='/js/exer.js', type='text/javascript')
 
   body
-    .navbar.navbar-fixed-top.navbar-inverse
+    .navbar.navbar-fixed-top
        .navbar-inner
           .container
-              a.brand(href="#/home") Iskolarship
-              .nav-collapse.collapse
-                 ul.nav
-                   li
-                     a(href="#/home") Home
-                   li
-                     a(href="#/donate") Donate
-                   li
-                     a(href="#/success-stories") Success Stories
-                   li
-                     a(href="#/aff") Affiliations
-                   li
-                     a(href="#/about") About
+              a.brand Iskolarship
     .jumbotron.masthead
+      |asdsada
        .container
           h1 Awesome Banner
           p.lead awesome description
-     hr
-    .row
-      .container
-        div(ng-view)
+    .row(ng-controller="donationCtrl")
+      div(ng-view)

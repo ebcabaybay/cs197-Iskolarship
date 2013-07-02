@@ -5,10 +5,10 @@ momentum = angular.module "Momentum", [
 ]
 
 momentum.config ["$routeProvider", ($routeProvider) ->
-  $routeProvider.when "/exercise",
-    templateUrl: "/html/exercise.html"
+  $routeProvider.when "/post-scholarship",
+    templateUrl: "/html/post-scholarship.html"
 
-  $routeProvider.when "/home",
+  $routeProvider.when "/",
     templateUrl: "/html/messages.html"
     controller: 'MessagesController'
 

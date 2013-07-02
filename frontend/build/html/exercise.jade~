@@ -24,11 +24,12 @@
        .progress.progress-striped.active
            .bar(style="width:{{(getTotalDonations()/goal)*100}}%")
 
-form(ng-submit="addDonations()").userinput      
+.row(ng-controller="donationCtrl")
+   form(ng-submit="addDonations()").userinput    
       h4 Name
-      input(ng-model="donorName")
+      input(type="text",ng-model="donorName")
       h4 Amount of Donation
-      input(ng-model="donationAmount")
+      input(type="text",ng-model="donationAmount")
       <br>
       <br>
       input(type="submit",value="Donate").btn
@@ -50,11 +51,8 @@ form(ng-submit="addDonations()").userinput
    .span12.offset1
        h2 Comments
        table.table.table-striped.table-bordered.table-hover
-           thead
+              tr(ng-repeat="comment in comments")
+                 td {{comment}}
               tr
-                 td Name
-                 td Amount donated
-           tbody
-              tr(ng-repeat="donation in donations")
-                 td {{donation.name}}
-                 td Php {{donation.amount}}
+                 td
+                   input(style="width:100%")

@@ -1,0 +1,10 @@
+h2 Basic Features
+ul
+ li
+  a(href="#/post-scholarship") Post Scholarship
+ li 
+  a(href="#/post-studentdetails") Post Student Details
+ li
+  a(href="#/view-scholarships") View Scholarships
+ li
+  a(href="#") View Student Details
