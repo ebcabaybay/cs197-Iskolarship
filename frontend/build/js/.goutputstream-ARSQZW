@@ -9,9 +9,7 @@ momentum.controller "ViewStudentController", ['$scope', '$http', ($scope, $http)
 			$scope.data.reason = response.split("_")[2]
 			$scope.nameid = response.split("_")[0]
 			$scope.degreeprogram = response.split("_")[1]
-			$scope.yearlevel = "III - "
-			$scope.targetmoney = response.split("_")[3]
-			$scope.reason = response.split("_")[2]
+			$scope.yearlevel = response.split("_")[1]
 			alert "asasA"
 		.error (response) ->
 			alert response

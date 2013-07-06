@@ -13,6 +13,7 @@ class Students(Base):
     programid = Column(Integer)
     familyincome = Column(Numeric)
     reasonforneedingscholarship = Column(String)
+    targetmoney = Column(Integer)
 
 class Persons(Base):
     __tablename__ = 'persons'

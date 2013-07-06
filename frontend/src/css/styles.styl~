@@ -13,11 +13,11 @@
    background-image url(../img/jumbo.jpg)
 
 .leftdiv
-   width 49%
+   width 29%
    float left
 
 .rightdiv
-   width 49%
+   width 69%
    float right
 
 .heightdiv
@@ -36,4 +36,11 @@
 
 .talltd
    height 100px
+
+.specialImage
+   bottom 5
+   right 0
+   z-index 100 
+   display block
+   float center
 

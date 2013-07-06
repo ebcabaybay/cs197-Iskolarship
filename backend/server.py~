@@ -113,7 +113,7 @@ def get_astudentdetails(studentid):
 		students = db_session.query(Students).filter_by(studentid=studentid).one()
 		persons = db_session.query(Persons).filter_by(personid=students.personid).one()
 		programs = db_session.query(Programs).filter_by(programid=students.programid).one()
-		infohere = persons.firstname + ' ' + persons.middlename + ' ' + persons.lastname + '_' + programs.name + '_' + students.reasonforneedingscholarship
+		infohere = persons.firstname + ' ' + persons.middlename + ' ' + persons.lastname + '_' + programs.name + '_' + students.reasonforneedingscholarship + '_' + str(students.targetmoney)
 		return infohere
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404

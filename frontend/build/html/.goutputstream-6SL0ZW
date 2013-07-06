@@ -9,13 +9,16 @@ div.maindiv
 		div.rightdiv
 			div.well
 				h1 {{nameid}}
-				h4 {{yearlevel}}{{degreeprogram}}
-				h5 Amount Needed: {{targetmoney}}
+				h4 {{degreeprogram}}
+				br
+				| Donation Information
+				hr
 				center
-					| % Funded:  | Php Donations To Go
+					| % Funded | Php Donations To Go
 				br
 				div.progress.progress-striped
 					div.bar.bar-success(style="width: 20%")
+				br
 				center
 					table
 						tr
@@ -29,15 +32,38 @@ div.maindiv
 					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')
 	div.row
 		div.well.wholediv
-			h2 Student Background
-			|{{reason}}
+			p Student Information
 			hr
-	div.row
-		div.well.wholediv
 			form.sample-form#getdetails(ng-submit="getDetails()")
-				label Note to user: type 2 in the textbox and click go. 
+				label ID
 				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
 				
 				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
 				div
 					button.btn#getbutton Go!
+
+			table
+				tr
+					td
+						label Name
+					td
+						input.id.tallthis(ng-model='data.lastname', type = 'integer', placeholder = "NAME", enabled, name='lastname')
+				tr
+					td
+						label Degree Program
+					td
+						input.id(ng-model='data.degreeprogram', type = 'integer', enabled, name='lastname')
+				tr
+					td
+						label Year Level
+					td
+						input.id(ng-model='data.yearlevel', type = 'integer', enabled, name='lastname')
+				tr
+					td
+						label Description
+					td
+						input.id(ng-model='data.reason', type = 'integer', enabled, name='lastname')
+			
+
+
+
