@@ -9,6 +9,15 @@ from database import db_session, db_init
 app = Flask(__name__)
 db_init()
 
+@app.route('/postscholarship/', methods=['POST'], strict_slashes=False)
+def post_scholarship():
+	xtitle = request.json['title']
+	xdescription = request.json['description']
+	s = Scholarship(title=xtitle,description=xdescription)
+	db_session.add(s)
+	db_session.commit()
+	return 'Inserted scholarship!'
+
 # Function that maps to HTTP GET requests
 # Example: accessing localhost:8080/messages/1
 # Used in RESTful services to get objects

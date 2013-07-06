@@ -1,5 +1,6 @@
 a(href="#/") << Back 
 h3 ## Meli code goes here
+<<<<<<< HEAD
 
 div(mm-tabs)
 	div(mm-tab="Post Details")
@@ -20,3 +21,5 @@ div(mm-tabs)
 			textarea.message(ng-model='data.firstname', disabled, name='firstname')
 			div
 				button.btn#getbutton Go!
+=======
+>>>>>>> 438b1252229ecfad6b02f0c15e2a05aeeb0e821e

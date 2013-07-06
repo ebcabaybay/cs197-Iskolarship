@@ -6,7 +6,8 @@
   momentum.config([
     "$routeProvider", function($routeProvider) {
       $routeProvider.when("/post-scholarship", {
-        templateUrl: "/html/post-scholarship.html"
+        templateUrl: "/html/dan.html",
+        controller: 'DanController'
       });
       $routeProvider.when("/post-studentdetails", {
         templateUrl: "/html/post-studentdetails.html",
