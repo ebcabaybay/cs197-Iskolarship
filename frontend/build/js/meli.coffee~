@@ -1,0 +1,23 @@
+momentum = angular.module "Momentum.controllers", []
+
+momentum.controller "PostStudentDetails", ['$scope', '$http', ($scope, $http) ->
+	$scope.data =
+		personid: ""
+	$scope.getStudentDetails = ->
+		alert "in"
+		$http.get("/api/poststudentdetails/#{$scope.data.personid}")
+		.success (response) ->
+			$scope.data.lastname = response
+			alert "asasA"
+		.error (response) ->
+			alert response
+			alert "There are no men"
+		
+	$scope.postStudentDetails = ->
+		$http.post("/api/poststudentdetails",
+			lastname: $scope.data.lastname,
+			firstname: $scope.data.firstname).success (response) ->
+				alert "Success!"
+			.error (response) ->
+				alert "Fail!"
+]
