@@ -12,7 +12,6 @@ momentum.controller "ViewStudentController", ['$scope', '$http', ($scope, $http)
 			$scope.yearlevel = "III - "
 			$scope.targetmoney = response.split("_")[3]
 			$scope.reason = response.split("_")[2]
-			alert "asasA"
 		.error (response) ->
 			alert response
 			alert "There are no men"

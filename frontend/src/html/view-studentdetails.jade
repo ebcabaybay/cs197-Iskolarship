@@ -10,7 +10,7 @@ div.maindiv
 			div.well
 				h1 {{nameid}}
 				h4 {{yearlevel}}{{degreeprogram}}
-				h5 Amount Needed: {{targetmoney}}
+				h5 Amount Needed: Php {{targetmoney}}
 				center
 					| % Funded:  | Php Donations To Go
 				br
@@ -35,7 +35,7 @@ div.maindiv
 	div.row
 		div.well.wholediv
 			form.sample-form#getdetails(ng-submit="getDetails()")
-				label Note to user: type 2 in the textbox and click go. 
+				h1 Note to user: type 2 in the textbox and click go. 
 				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
 				
 				// textarea.message(ng-model='data.firstname', disabled, name='firstname')

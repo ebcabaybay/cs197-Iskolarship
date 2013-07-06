@@ -14,8 +14,7 @@
           $scope.degreeprogram = response.split("_")[1];
           $scope.yearlevel = "III - ";
           $scope.targetmoney = response.split("_")[3];
-          $scope.reason = response.split("_")[2];
-          return alert("asasA");
+          return $scope.reason = response.split("_")[2];
         }).error(function(response) {
           alert(response);
           return alert("There are no men");
