@@ -13,10 +13,11 @@ div(mm-tabs)
 		p
 			strong In the database
 		form.sample-form#getdetails(ng-submit="getStudentDetails()")
-			label ID
-			input.id(ng-model='data.personid', type='integer', name='personid', value=1)
-			label Message
-			textarea.message(ng-model='data.lastname', disabled, name='lastname')
-			// textarea.message(ng-model='data.firstname', disabled, name='firstname')
-			div
-				button.btn#getbutton Go!
+		label ID
+		input.personid(ng-model='data.personid', type='integer', name='personid')
+		label Message
+		textarea.message(ng-model='data.lastname', name='lastname')
+		textarea.message(ng-model='data.firstname', name='firstname')
+		div
+			button.btn#getbutton Go!
+        

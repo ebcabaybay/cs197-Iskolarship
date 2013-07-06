@@ -29,4 +29,3 @@ class Scholarships(Base):
 		scholarshipid = Column(Integer, primary_key=True)
 		title = Column(String(50))
 		description = Column(String(50))
-			

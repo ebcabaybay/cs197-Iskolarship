@@ -3,6 +3,7 @@ import json # This is a library for encoding objects into JSON
 from flask import Flask, request # This the microframework library we'll use to build our backend.
 import sqlalchemy
 from models import Message
+from models import Persons
 from database import db_session, db_init
 
 app = Flask(__name__)
@@ -77,6 +78,23 @@ def delete_message(id):
     except sqlalchemy.orm.exc.NoResultFound:
         return 'Message does not exist', 404
 
+@app.route('/poststudentdetails/', methods=['POST'], strict_slashes=False)
+def post_studentdetails():
+	lastname = request.json['lastname']
+	firstname = request.json['firstname']
+	p = Persons(lastname=lastname, firstname=firstname)
+	db_session.add(p)
+	db_session.commit()
+	return 'Ok na'
+
+@app.route('/poststudentdetails/<int:personid>/', methods=['GET'], strict_slashes=False)
+def get_studentdetails(personid):
+	try:
+		persons = db_session.query(Persons).filter_by(personid=personid).one()
+		rperson = [persons.lastname, persons.firstname]
+		return rperson[0]
+	except sqlalchemy.orm.exc.NoResultFound:
+		return 'There are no persons', 404
 if __name__ == '__main__':
     print 'Listening on port 8080...'
     app.run(host='0.0.0.0', port=8080, debug=True)

@@ -11,7 +11,7 @@
       });
       $routeProvider.when("/post-studentdetails", {
         templateUrl: "/html/post-studentdetails.html",
-        controller: 'MessagesController'
+        controller: 'PostStudentDetails'
       });
       $routeProvider.when("/view-scholarships", {
         templateUrl: "/html/view-scholarships.html",

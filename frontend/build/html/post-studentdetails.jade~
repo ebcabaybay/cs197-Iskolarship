@@ -1,2 +1,25 @@
 a(href="#/") << Back 
 h3 ## Meli code goes here
+<<<<<<< HEAD
+
+div(mm-tabs)
+	div(mm-tab="Post Details")
+		form.sample-form#someform(ng-submit="postStudentDetails()")
+			input.message(ng-model='data.lastname', placeholder='Lastname', name='lastname')
+			br
+			input.message(ng-model='data.firstname', placeholder='Firstname', name='firstname')
+			div
+				button.btn#submitdetails Go!
+	div(mm-tab="Get Details")
+		p
+			strong In the database
+		form.sample-form#getdetails(ng-submit="getStudentDetails()")
+			label ID
+			input.id(ng-model='data.personid', type='integer', name='personid', value=1)
+			label Message
+			textarea.message(ng-model='data.lastname', disabled, name='lastname')
+			textarea.message(ng-model='data.firstname', disabled, name='firstname')
+			div
+				button.btn#getbutton Go!
+=======
+>>>>>>> 438b1252229ecfad6b02f0c15e2a05aeeb0e821e
