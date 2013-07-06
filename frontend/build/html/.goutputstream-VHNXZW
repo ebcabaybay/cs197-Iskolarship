@@ -28,7 +28,8 @@ div.maindiv
 			hr
 			form.sample-form#getdetails(ng-submit="getDetails()")
 				label ID
-				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
+				input.id(id = "personidchosen", ng-model='data.personid', type='integer', name='personid', value=2)
+				label Message
 				
 				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
 				div

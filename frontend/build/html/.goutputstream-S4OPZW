@@ -26,36 +26,28 @@ div.maindiv
 		div.well.wholediv
 			p Student Information
 			hr
+			table
+				tr
+					td
+						p Name
+					td textarea.message(ng-model='data.lastname', disabled, name='lastname')
+			label Name
+			textarea.message(ng-model='data.lastname', disabled, name='lastname')
+			br
+			p Degree Program
+			br
+			p Year Level
+			br
+			p Description
+
 			form.sample-form#getdetails(ng-submit="getDetails()")
 				label ID
-				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
+				input.id(ng-model='data.personid', type='integer', name='personid', value=1)
+				label Message
 				
 				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
 				div
 					button.btn#getbutton Go!
-
-			table
-				tr
-					td
-						label Name
-					td
-						input.id.tallthis(ng-model='data.lastname', type = 'text', placeholder = "NAME", enabled, name='lastname')
-				tr
-					td
-						label Degree Program
-					td
-						input.id(ng-model='data.degreeprogram', type = 'text', enabled, name='lastname')
-				tr
-					td
-						label Year Level
-					td
-						input.id(ng-model='data.yearlevel', type = 'text', enabled, name='lastname')
-				tr
-					td
-						label Description
-					td
-						input.id(ng-model='data.reason', type = 'text', enabled, name='lastname')
-			
 
 
 

@@ -29,3 +29,9 @@ class Scholarships(Base):
     scholarshipid = Column(Integer, primary_key=True)
     title = Column(String(50))
     description = Column(String(50))
+
+class Programs(Base):
+    __tablename__ = 'programs'
+    programid = Column(Integer, primary_key=True)
+    name = Column(String(80))
+    unitid = Column(Integer)

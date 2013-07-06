@@ -54,4 +54,8 @@ momentum.controller "MessageController", ['$scope', '$http', ($scope, $http) ->
       $scope.supporters = 0;
       $scope.donations = 0;
 
+  $scope.getDetails = ->
+      alert 'here'
+
+
 ]

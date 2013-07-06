@@ -32,8 +32,5 @@
    margin-right 0%
 
 .tallthis
-   height 100%
-
-.talltd
-   height 100px
+   height 350px
 

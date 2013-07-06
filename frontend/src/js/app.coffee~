@@ -19,7 +19,7 @@ momentum.config ["$routeProvider", ($routeProvider) ->
 
   $routeProvider.when "/view-studentdetails",
     templateUrl: "/html/view-studentdetails.html"
-    controller: 'MessageController'
+    controller: 'ViewStudentController'
 
   $routeProvider.when "/home",
     templateUrl: "/html/home.html"

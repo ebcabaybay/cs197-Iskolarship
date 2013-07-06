@@ -28,12 +28,14 @@ div.maindiv
 			hr
 			form.sample-form#getdetails(ng-submit="getDetails()")
 				label ID
-				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
+				input.id(id = "personidchosen", ng-model='data.personid', type='hidden', name='personid', value=1)
+				label Message
 				
 				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
 				div
 					button.btn#getbutton Go!
 
+			input(ng-model='data.personid', type='hidden', name='personid', value=1)
 			table
 				tr
 					td
@@ -55,6 +57,16 @@ div.maindiv
 						label Description
 					td
 						input.id(ng-model='data.reason', type = 'text', enabled, name='lastname')
+
+			label Name
+			textarea.message(ng-model='data.lastname', disabled, name='lastname')
+			br
+			p Degree Program
+			br
+			p Year Level
+			br
+			p Description
+
 			
 
 

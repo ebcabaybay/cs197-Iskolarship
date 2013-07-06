@@ -5,6 +5,7 @@ import sqlalchemy
 from models import Message
 from models import Persons
 from models import Students
+from models import Programs
 from database import db_session, db_init
 
 app = Flask(__name__)
@@ -107,11 +108,13 @@ def get_studentdetails(personid):
 		return 'There are no persons', 404
 
 @app.route('/getstudentdetails/<int:studentid>/', methods=['GET'], strict_slashes=False)
-def get_studentdetails(studentid):
+def get_astudentdetails(studentid):
 	try:
-		student = db_session.query(Students).filter_by(studentid=studentid).one()
-		#rperson = [persons.lastname, persons.firstname]
-		return student.reasonforneedingscholarship
+		students = db_session.query(Students).filter_by(studentid=studentid).one()
+		persons = db_session.query(Persons).filter_by(personid=students.personid).one()
+		programs = db_session.query(Programs).filter_by(programid=students.programid).one()
+		infohere = persons.firstname + ' ' + persons.middlename + ' ' + persons.lastname + '_' + programs.name + '_' + students.reasonforneedingscholarship
+		return infohere
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404
 
