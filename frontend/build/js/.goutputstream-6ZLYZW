@@ -1,0 +1,7 @@
+momentum = angular.module "Momentum.controllers", []
+
+momentum.controller "ViewStudentController", ['$scope', '$http', ($scope, $http) ->
+	$scope.getDetails = ->
+		$http.get("/api/poststudentdetails/#{$scope.data.personid}")
+		
+]

@@ -4,6 +4,7 @@ from flask import Flask, request # This the microframework library we'll use to 
 import sqlalchemy
 from models import Message
 from models import Persons
+from models import Students
 from database import db_session, db_init
 
 app = Flask(__name__)
@@ -14,9 +15,7 @@ db_init()
 def get_student(studentid):
     try:
         student = db_session.query(Student).filter_by(studentid=studentid).one()
-        personinfo = student.personid
-	person = db_session.query(Person).filter_by(personid=personinfo).one()
-	return person.lastname
+	return student.reasonforneedingscholarship
     except sqlalchemy.orm.exc.NoResultFound:
         return 'Message does not exist', 404
 
@@ -106,6 +105,18 @@ def get_studentdetails(personid):
 		return rperson[0]
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404
+
+@app.route('/getstudentdetails/<int:studentid>/', methods=['GET'], strict_slashes=False)
+def get_studentdetails(studentid):
+	try:
+		student = db_session.query(Students).filter_by(studentid=studentid).one()
+		#rperson = [persons.lastname, persons.firstname]
+		return student.reasonforneedingscholarship
+	except sqlalchemy.orm.exc.NoResultFound:
+		return 'There are no persons', 404
+
+
+
 if __name__ == '__main__':
     print 'Listening on port 8080...'
     app.run(host='0.0.0.0', port=8080, debug=True)
