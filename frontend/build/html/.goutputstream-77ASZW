@@ -22,10 +22,11 @@ div.maindiv
 					table
 						tr
 							td
-								h4 DONATION AMOUNT
+								h3 DONATION AMOUNT
 							td
-								input.id(ng-model='data.amount', type = 'integer', enabled, name='amount')
-
+								input.id(ng-model='data.reason', type = 'text', enabled, name='lastname')
+						
+				br
 				center
 					br
 					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')

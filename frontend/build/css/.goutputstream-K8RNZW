@@ -21,7 +21,7 @@
    float right
 
 .heightdiv
-   height 300px
+   height 280px
 
 .wholediv
    margin-left 0%

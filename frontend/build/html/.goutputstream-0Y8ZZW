@@ -19,13 +19,11 @@ div.maindiv
 					div.bar.bar-success(style="width: 20%")
 				br
 				center
-					table
-						tr
-							td
-								h4 DONATION AMOUNT
-							td
-								input.id(ng-model='data.amount', type = 'integer', enabled, name='amount')
-
+					span.label.label-important
+						| DONATION AMOUNT
+						input.id(ng-model='data.reason', type = 'text', enabled, name='lastname', style = "padding-top:5px")
+						
+				br
 				center
 					br
 					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')

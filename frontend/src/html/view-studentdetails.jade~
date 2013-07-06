@@ -12,13 +12,20 @@ div.maindiv
 				br
 				| Donation Information
 				hr
-				| % Funded | Php Donations To Go
+				center
+					| % Funded | Php Donations To Go
 				br
-				div.span2
-					p Donation Amount
-				div.span2
-					p Php 10000
+				div.progress.progress-striped
+					div.bar.bar-success(style="width: 20%")
 				br
+				center
+					table
+						tr
+							td
+								h4 DONATION AMOUNT
+							td
+								input.id(ng-model='data.amount', type = 'integer', enabled, name='amount')
+
 				center
 					br
 					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')
