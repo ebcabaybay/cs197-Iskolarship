@@ -54,8 +54,13 @@ momentum.controller "MessageController", ['$scope', '$http', ($scope, $http) ->
       $scope.supporters = 0;
       $scope.donations = 0;
 
-  $scope.getDetails = ->
-      alert 'here'
 
+  $scope.getStudent = ->
+    alert('ddd');
+    $http.get("/api/students/#{$scope.data.studentid}")
+    .success (response) ->
+      $scope.data.student = response
+    .error (e) ->
+      alert e
 
 ]

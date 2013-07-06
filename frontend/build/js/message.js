@@ -52,9 +52,12 @@
           return alert("Something went wrong. That ID may not exist.");
         });
       };
-      return $scope.donationCtrl = function() {
+      $scope.donationCtrl = function() {
         $scope.supporters = 0;
         return $scope.donations = 0;
+      };
+      return $scope.getDetails = function() {
+        return alert('here');
       };
     }
   ]);

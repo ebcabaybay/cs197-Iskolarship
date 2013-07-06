@@ -7,7 +7,7 @@ momentum.controller "PostStudentDetails", ['$scope', '$http', ($scope, $http) ->
 		alert "in"
 		$http.get("/api/poststudentdetails/#{$scope.data.personid}")
 		.success (response) ->
-			$scope.data.lastname = response
+			$scope.data.lastname = response[0]
 			alert "asasA"
 		.error (response) ->
 			alert response

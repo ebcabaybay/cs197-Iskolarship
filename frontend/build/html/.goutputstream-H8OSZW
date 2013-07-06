@@ -1,7 +1,7 @@
 a(href="#/") << Back 
 h3 ## ADELEN
 
-form.sample-form#getdetails(ng-submit="getDetails()")
+form.sample-form#getdetails(ng-submit="getStudentDetails()")
 	label ID
 	input.id(ng-model='data.personid', type='integer', name='personid', value=1)
 	label Message

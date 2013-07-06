@@ -21,11 +21,11 @@ class Persons(Base):
     firstname = Column(String(30))
     middlename = Column(String(30))
     namesuffix = Column(String(30))
-    birthday = Column(DateTime))
+    birthday = Column(DateTime)
     sex = Column(Integer)
     
 class Scholarships(Base):
-		__tablename__ = 'scholarships'
-		scholarshipid = Column(Integer, primary_key=True)
-		title = Column(String(50))
-		description = Column(String(50))
+    __tablename__ = 'scholarships'
+    scholarshipid = Column(Integer, primary_key=True)
+    title = Column(String(50))
+    description = Column(String(50))

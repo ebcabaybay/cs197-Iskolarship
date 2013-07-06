@@ -1,0 +1,7 @@
+a(href="#/") << Back 
+h3 ## Adelen code goes here
+
+input.id(ng-model='data.studentid', type='integer', name='studentid', value=1)
+label Message
+textarea.message(ng-model='data.lastname', enabled, name='lastname')
+

@@ -1,5 +1,5 @@
 a(href="#/") << Back 
-h3 ## Meli code goes here
+h3 ## Meli code goes herea
 
 div(mm-tabs)
 	div(mm-tab="Post Details")
@@ -17,6 +17,6 @@ div(mm-tabs)
 			input.id(ng-model='data.personid', type='integer', name='personid', value=1)
 			label Message
 			textarea.message(ng-model='data.lastname', disabled, name='lastname')
-			textarea.message(ng-model='data.firstname', disabled, name='firstname')
+			// textarea.message(ng-model='data.firstname', disabled, name='firstname')
 			div
 				button.btn#getbutton Go!

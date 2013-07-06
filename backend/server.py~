@@ -9,6 +9,17 @@ from database import db_session, db_init
 app = Flask(__name__)
 db_init()
 
+# TRY
+@app.route('/students/<int:studentid>/', strict_slashes=False)
+def get_student(studentid):
+    try:
+        student = db_session.query(Student).filter_by(studentid=studentid).one()
+        personinfo = student.personid
+	person = db_session.query(Person).filter_by(personid=personinfo).one()
+	return person.lastname
+    except sqlalchemy.orm.exc.NoResultFound:
+        return 'Message does not exist', 404
+
 @app.route('/postscholarship/', methods=['POST'], strict_slashes=False)
 def post_scholarship():
 	xtitle = request.json['title']

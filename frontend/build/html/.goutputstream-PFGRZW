@@ -1,7 +1,10 @@
 a(href="#/") << Back 
-h3 ## ADELEN
+h3 ## Meli code goes here
 
-form.sample-form#getdetails(ng-submit="getDetails()")
+
+p
+	strong In the database
+form.sample-form#getdetails(ng-submit="getStudentDetails()")
 	label ID
 	input.id(ng-model='data.personid', type='integer', name='personid', value=1)
 	label Message
@@ -9,4 +12,3 @@ form.sample-form#getdetails(ng-submit="getDetails()")
 	// textarea.message(ng-model='data.firstname', disabled, name='firstname')
 	div
 		button.btn#getbutton Go!
-
