@@ -32,7 +32,7 @@ class Scholarships(Base):
 		title = Column(String(50))
 		description = Column(String(50))
 		program = Column(String(50))
-		gender = Column(Char)
+		gender = Column(String(1))
 		yearlv = Column(String(50))
 		maxincome = Column(Integer)
 		filepath = Column(String(100))

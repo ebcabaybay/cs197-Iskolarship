@@ -26,7 +26,6 @@ class Persons(Base):
     sex = Column(Integer)
     
 class Scholarships(Base):
-<<<<<<< HEAD
 		__tablename__ = 'scholarships'
 		scholarshipid = Column(Integer, primary_key=True)
 		title = Column(String(50))
@@ -36,15 +35,9 @@ class Scholarships(Base):
 		yearlv = Column(String(50))
 		maxincome = Column(Integer)
 		filepath = Column(String(100))
-=======
-    __tablename__ = 'scholarships'
-    scholarshipid = Column(Integer, primary_key=True)
-    title = Column(String(50))
-    description = Column(String(50))
 
 class Programs(Base):
     __tablename__ = 'programs'
     programid = Column(Integer, primary_key=True)
     name = Column(String(80))
     unitid = Column(Integer)
->>>>>>> 49e19c5d76fff8375cf83081a43cc434cfa2774a
