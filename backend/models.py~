@@ -6,20 +6,7 @@ class Message(Base):
     id = Column(Integer, primary_key=True)
     message = Column(String(255))
 
-<<<<<<< HEAD
 class Students(Base):
-=======
-<<<<<<< HEAD
-class Persons(Base):
-	__tablename__ = 'persons'
-	personid = Column(Integer, primary_key=True)
-	lastname = Column(String(30))
-	firstname = Column(String(30))
-	middlename = Column(String(30))
-	namesuffix = Column(String(10))
-=======
-class Student(Base):
->>>>>>> d20e571bddaa2abb1634ed565e1a2a7cb309d85f
     __tablename__ = 'students'
     studentid = Column(Integer, primary_key=True)
     personid = Column(Integer)
@@ -34,16 +21,16 @@ class Persons(Base):
     firstname = Column(String(30))
     middlename = Column(String(30))
     namesuffix = Column(String(30))
-    birthday = Column(DateTime))
+    birthday = Column(DateTime)
     sex = Column(Integer)
-<<<<<<< HEAD
     
 class Scholarships(Base):
 		__tablename__ = 'scholarships'
 		scholarshipid = Column(Integer, primary_key=True)
 		title = Column(String(50))
 		description = Column(String(50))
-			
-=======
->>>>>>> 438b1252229ecfad6b02f0c15e2a05aeeb0e821e
->>>>>>> d20e571bddaa2abb1634ed565e1a2a7cb309d85f
+		program = Column(String(50))
+		gender = Column(Char)
+		yearlv = Column(String(50))
+		maxincome = Column(Integer)
+		filepath = Column(String(100))

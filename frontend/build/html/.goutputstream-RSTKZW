@@ -1,0 +1,11 @@
+div
+	.row
+		//form.sample-form#post-form(ng-submit="postScholarship()", enctype='multipart/form-data')
+		form.sample-form#post-form(action='/api/trythis', method="post", enctype='multipart/form-data')
+			textarea.message(ng-model='data.title', placeholder='Title', name='title')
+			input(ng-model='data.file', type='file')
+			br
+			textarea.message(ng-model='data.description', placeholder='Description', name='description')
+			br
+			div
+				button.btn#post-button Create Scholarshipz

@@ -1,0 +1,45 @@
+div
+	.row
+		form.sample-form#post-form(action='/api/trythis', method="post", enctype='multipart/form-data')
+			textarea.message(ng-model='data.title', placeholder='Title', name='title')
+			br
+			table
+				tr
+					td 
+						input#degree_cb(type='checkbox') 
+						| Degree program
+
+					td
+						input#gender_cb(type='checkbox') 
+						| Gender
+				tr
+					td
+						select#degree_choice(style="display:none")
+							option BS ComSci
+							option BS Math
+					td#gender_choice(style="display:none")
+						input(type='radio') 
+						| Male
+						input(type='radio')
+						| Female
+				tr
+					td
+						input#income_cb(type='checkbox') 
+						| Family income
+					td
+						input#year_cb(type='checkbox') 
+						| Year level
+				tr
+					td
+					td
+						select#year_choice(style="display:none")
+							option First Year
+							option Second Year
+							option Third Year
+							option Fourth Year
+			textarea.message(ng-model='data.description', placeholder='Description', name='description')
+			br
+			input(type='file', name='file')
+			br
+			div
+				button.btn#post-button Create Scholarshipz

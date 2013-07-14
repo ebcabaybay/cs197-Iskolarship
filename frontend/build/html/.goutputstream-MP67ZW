@@ -6,11 +6,11 @@ div
 			table
 				tr
 					td 
-						input#degree_cb(type='checkbox', name='degree_cb') 
+						input#degree_cb(type='checkbox') 
 						| Degree program
 
 					td
-						input#gender_cb(type='checkbox', name='gender_cb') 
+						input#gender_cb(type='checkbox') 
 						| Gender
 				tr
 					td
@@ -19,21 +19,21 @@ div
 							option(value="BS Math") BS Math
 					td
 						label.gc(for='gender_choice_M',style="display:none") Male
-						input.gc#gender_choice_M(type='radio', name='gender_choice', value='M',style="display:none", checked) 
+						input.gc#gender_choice_M(type='radio', name='gender_choice', value='M',style="display:none") 
 						br
 						label.gc(for='gender_choice_F',style="display:none") Female
 						input.gc#gender_choice_F(type='radio', name='gender_choice', value='F',style="display:none")
 				tr
 					td
-						input#income_cb(type='checkbox', name='income_cb') 
+						input#income_cb(type='checkbox') 
 						| Family income
 					td
-						input#year_cb(type='checkbox', name='year_cb') 
+						input#year_cb(type='checkbox') 
 						| Year level
 				tr
 					td#income_choice(style="display:none")
 						| Less than
-						input#income_input(type='text', placeholder='Max amount in Pesos', name="max_income")
+						input(type='text', placeholder='Max amount in Pesos', name="max_income", value='&#00')
 					td
 						select#year_choice(style="display:none", name='year_choice')
 							option(value="1st year") First Year

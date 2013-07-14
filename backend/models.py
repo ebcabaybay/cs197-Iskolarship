@@ -21,7 +21,7 @@ class Persons(Base):
     firstname = Column(String(30))
     middlename = Column(String(30))
     namesuffix = Column(String(30))
-    birthday = Column(DateTime))
+    birthday = Column(DateTime)
     sex = Column(Integer)
     
 class Scholarships(Base):
@@ -29,3 +29,8 @@ class Scholarships(Base):
 		scholarshipid = Column(Integer, primary_key=True)
 		title = Column(String(50))
 		description = Column(String(50))
+		program = Column(String(50))
+		gender = Column(String(1))
+		yearlv = Column(String(50))
+		maxincome = Column(Integer)
+		filepath = Column(String(100))

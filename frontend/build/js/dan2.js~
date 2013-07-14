@@ -1,0 +1,9 @@
+
+  $(document).ready(function() {
+    $('#degree_cb').change(function() {
+      $('#degree_choice').show();
+    });
+    $('#post-button').click(function() {
+      alert("dsfsd");
+    });
+  });
