@@ -86,7 +86,7 @@ def postscholarship():
 			xyearlv = None
 			
 		if request.form.get('income_cb'):
-			xmaxincome = request.form['max_income']
+			xmaxincome = int(request.form['max_income'])
 		else:
 			xmaxincome = None
 		#### end: optional tags

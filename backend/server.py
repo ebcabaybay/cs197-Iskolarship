@@ -7,12 +7,9 @@ from werkzeug import secure_filename
 import sqlalchemy
 from models import Message
 from models import Persons
-<<<<<<< HEAD
 from models import Scholarships
-=======
 from models import Students
 from models import Programs
->>>>>>> 49e19c5d76fff8375cf83081a43cc434cfa2774a
 from database import db_session, db_init
 import traceback
 import os
@@ -24,8 +21,6 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db_init()
 
-<<<<<<< HEAD
-=======
 # TRY
 @app.route('/students/<int:studentid>/', strict_slashes=False)
 def get_student(studentid):
@@ -34,15 +29,6 @@ def get_student(studentid):
 	return student.reasonforneedingscholarship
     except sqlalchemy.orm.exc.NoResultFound:
         return 'Message does not exist', 404
-
-@app.route('/postscholarship/', methods=['POST'], strict_slashes=False)
-def post_scholarship():
-	xtitle = request.json['title']
-	xdescription = request.json['description']
-	s = Scholarship(title=xtitle,description=xdescription)
-	db_session.add(s)
-	db_session.commit()
-	return 'Inserted scholarship!'
 
 # Function that maps to HTTP GET requests
 # Example: accessing localhost:8080/messages/1
@@ -56,7 +42,6 @@ def get_message(id):
         return message.message
     except sqlalchemy.orm.exc.NoResultFound:
         return 'Message does not exist', 404
->>>>>>> 49e19c5d76fff8375cf83081a43cc434cfa2774a
 
 ##dan
 def allowed_file(filename):
@@ -133,8 +118,6 @@ def get_astudentdetails(studentid):
 		return infohere
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404
-
-
 
 if __name__ == '__main__':
     print 'Listening on port 8080...'
