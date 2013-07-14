@@ -1,0 +1,62 @@
+a(href="#/") << Back 
+h3 ## ADELEN
+
+div.maindiv
+	div.row
+		div.leftdiv
+			div.well.heightdiv
+				p left
+		div.rightdiv
+			div.well.heightdiv
+				p right
+				br
+				| Donation Information
+				hr
+				| % Funded | Php Donations To Go
+				br
+				div.span2
+					p Donation Amount
+				div.span2
+					p Php 10000
+				br
+				center
+					br
+					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')
+	div.row
+		div.well.wholediv
+			p Student Information
+			hr
+			form.sample-form#getdetails(ng-submit="getDetails()")
+				label ID
+				input.id(id = "personidchosen", ng-model='data.personid', type='integer', name='personid', value=2)
+				label Message
+				
+				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
+				div
+					button.btn#getbutton Go!
+
+			table
+				tr
+					td
+						label Name
+					td
+						input.id.tallthis(ng-model='data.lastname', type = 'text', placeholder = "NAME", enabled, name='lastname')
+				tr
+					td
+						label Degree Program
+					td
+						input.id(ng-model='data.degreeprogram', type = 'text', enabled, name='lastname')
+				tr
+					td
+						label Year Level
+					td
+						input.id(ng-model='data.yearlevel', type = 'text', enabled, name='lastname')
+				tr
+					td
+						label Description
+					td
+						input.id(ng-model='data.reason', type = 'text', enabled, name='lastname')
+			
+
+
+

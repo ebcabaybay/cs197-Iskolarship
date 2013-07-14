@@ -1,0 +1,66 @@
+a(href="#/") << Back 
+h3 ## ADELEN
+
+div.maindiv
+	div.row
+		div.leftdiv
+			div.well.heightdiv
+				p left
+		div.rightdiv
+			div.well.heightdiv
+				p right
+				br
+				| Donation Information
+				hr
+				center
+					| % Funded | Php Donations To Go
+				br
+				div.progress.progress-striped
+					div.bar.bar-success(style="width: 20%")
+				br
+				center
+					span.label.label-important
+						| DONATION AMOUNT
+						input.id(ng-model='data.reason', type = 'text', enabled, name='lastname', style = "padding-top:5px")
+						
+				br
+				center
+					br
+					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')
+	div.row
+		div.well.wholediv
+			p Student Information
+			hr
+			form.sample-form#getdetails(ng-submit="getDetails()")
+				label ID
+				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
+				
+				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
+				div
+					button.btn#getbutton Go!
+
+			table
+				tr
+					td
+						label Name
+					td
+						input.id.tallthis(ng-model='data.lastname', type = 'text', placeholder = "NAME", enabled, name='lastname')
+				tr
+					td
+						label Degree Program
+					td
+						input.id(ng-model='data.degreeprogram', type = 'text', enabled, name='lastname')
+				tr
+					td
+						label Year Level
+					td
+						input.id(ng-model='data.yearlevel', type = 'text', enabled, name='lastname')
+				tr
+					td
+						label Description
+					td
+						input.id(ng-model='data.reason', type = 'text', enabled, name='lastname')
+			
+
+
+

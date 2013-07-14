@@ -1,0 +1,39 @@
+.sample-form
+  input, textarea 
+    // Make the text boxes wide enough
+    width 300px
+  button
+    // add spacing between buttons
+    font-weight bold
+
+.jumbotron
+   margin-top 100px
+   margin-bottom 30px
+   text-align center
+   background-image url(../img/jumbo.jpg)
+
+.leftdiv
+   width 49%
+   float left
+
+.rightdiv
+   width 49%
+   float right
+
+.heightdiv
+   height 250px
+
+.wholediv
+   margin-left 0%
+   margin-right 0%
+
+.maindiv
+   margin-left 4%
+   margin-right 0%
+
+.tallthis
+   height 100%
+
+.talltd
+   height 100px
+

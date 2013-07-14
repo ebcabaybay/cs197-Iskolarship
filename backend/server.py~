@@ -7,7 +7,12 @@ from werkzeug import secure_filename
 import sqlalchemy
 from models import Message
 from models import Persons
+<<<<<<< HEAD
 from models import Scholarships
+=======
+from models import Students
+from models import Programs
+>>>>>>> 49e19c5d76fff8375cf83081a43cc434cfa2774a
 from database import db_session, db_init
 import traceback
 import os
@@ -19,6 +24,39 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db_init()
 
+<<<<<<< HEAD
+=======
+# TRY
+@app.route('/students/<int:studentid>/', strict_slashes=False)
+def get_student(studentid):
+    try:
+        student = db_session.query(Student).filter_by(studentid=studentid).one()
+	return student.reasonforneedingscholarship
+    except sqlalchemy.orm.exc.NoResultFound:
+        return 'Message does not exist', 404
+
+@app.route('/postscholarship/', methods=['POST'], strict_slashes=False)
+def post_scholarship():
+	xtitle = request.json['title']
+	xdescription = request.json['description']
+	s = Scholarship(title=xtitle,description=xdescription)
+	db_session.add(s)
+	db_session.commit()
+	return 'Inserted scholarship!'
+
+# Function that maps to HTTP GET requests
+# Example: accessing localhost:8080/messages/1
+# Used in RESTful services to get objects
+# By default, if we don't specify a methods attribute
+# the handlers only respond to GET
+@app.route('/messages/<int:id>/', strict_slashes=False)
+def get_message(id):
+    try:
+        message = db_session.query(Message).filter_by(id=id).one()
+        return message.message
+    except sqlalchemy.orm.exc.NoResultFound:
+        return 'Message does not exist', 404
+>>>>>>> 49e19c5d76fff8375cf83081a43cc434cfa2774a
 
 ##dan
 def allowed_file(filename):
@@ -84,6 +122,20 @@ def get_studentdetails(personid):
 		return rperson[0]
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404
+
+@app.route('/getstudentdetails/<int:studentid>/', methods=['GET'], strict_slashes=False)
+def get_astudentdetails(studentid):
+	try:
+		students = db_session.query(Students).filter_by(studentid=studentid).one()
+		persons = db_session.query(Persons).filter_by(personid=students.personid).one()
+		programs = db_session.query(Programs).filter_by(programid=students.programid).one()
+		infohere = persons.firstname + ' ' + persons.middlename + ' ' + persons.lastname + '_' + programs.name + '_' + students.reasonforneedingscholarship + '_' + str(students.targetmoney)
+		return infohere
+	except sqlalchemy.orm.exc.NoResultFound:
+		return 'There are no persons', 404
+
+
+
 if __name__ == '__main__':
     print 'Listening on port 8080...'
     app.run(host='0.0.0.0', port=8080, debug=True)

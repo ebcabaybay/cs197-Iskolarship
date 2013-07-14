@@ -11,3 +11,35 @@
   text-align: center;
   background-image: url("../img/jumbo.jpg");
 }
+.leftdiv {
+  width: 29%;
+  float: left;
+}
+.rightdiv {
+  width: 69%;
+  float: right;
+}
+.heightdiv {
+  height: 300px;
+}
+.wholediv {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.maindiv {
+  margin-left: 4%;
+  margin-right: 0%;
+}
+.tallthis {
+  height: 100%;
+}
+.talltd {
+  height: 100px;
+}
+.specialImage {
+  bottom: 5;
+  right: 0;
+  z-index: 100;
+  display: block;
+  float: center;
+}

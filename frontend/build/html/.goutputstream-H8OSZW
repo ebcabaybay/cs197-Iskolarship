@@ -1,0 +1,12 @@
+a(href="#/") << Back 
+h3 ## ADELEN
+
+form.sample-form#getdetails(ng-submit="getStudentDetails()")
+	label ID
+	input.id(ng-model='data.personid', type='integer', name='personid', value=1)
+	label Message
+	textarea.message(ng-model='data.lastname', disabled, name='lastname')
+	// textarea.message(ng-model='data.firstname', disabled, name='firstname')
+	div
+		button.btn#getbutton Go!
+

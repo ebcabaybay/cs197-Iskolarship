@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 div
 	.row
 		form.sample-form#post-form(action='/api/trythis', method="post", enctype='multipart/form-data')
@@ -43,3 +44,7 @@ div
 			br
 			div
 				button.btn#post-button Create Scholarshipz
+=======
+a(href="#/") << Back 
+h3 ## Dragon Knight code goes here
+>>>>>>> 49e19c5d76fff8375cf83081a43cc434cfa2774a

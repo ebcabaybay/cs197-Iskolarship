@@ -1,0 +1,67 @@
+a(href="#/") << Back 
+h3 ## ADELEN
+
+div.maindiv
+	div.row
+		div.leftdiv
+			div.well
+				img(src = "/picture.jpg", class = "specialImage")
+		div.rightdiv
+			div.well
+				h1 {{nameid}}
+				h4 {{yearlevel}} {{degreeprogram}}
+				hr
+				center
+					| % Funded | Php Donations To Go
+				br
+				div.progress.progress-striped
+					div.bar.bar-success(style="width: 20%")
+				br
+				center
+					table
+						tr
+							td
+								h4 DONATION AMOUNT
+							td
+								input.id(ng-model='data.amount', type = 'integer', enabled, name='amount')
+
+				center
+					br
+					input(type='button', value='Fund Education!', class = "specialButton btn btn-danger", id = 'supportbtn')
+	div.row
+		div.well.wholediv
+			p Student Information
+			hr
+			form.sample-form#getdetails(ng-submit="getDetails()")
+				label ID
+				input.id(ng-model='data.personid', type='integer', name='personid', value='2')
+				
+				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
+				div
+					button.btn#getbutton Go!
+
+			table
+				tr
+					td
+						label Name
+					td
+						input.id.tallthis(ng-model='data.lastname', type = 'integer', placeholder = "NAME", enabled, name='lastname')
+				tr
+					td
+						label Degree Program
+					td
+						input.id(ng-model='data.degreeprogram', type = 'integer', enabled, name='lastname')
+				tr
+					td
+						label Year Level
+					td
+						input.id(ng-model='data.yearlevel', type = 'integer', enabled, name='lastname')
+				tr
+					td
+						label Description
+					td
+						input.id(ng-model='data.reason', type = 'integer', enabled, name='lastname')
+			
+
+
+
