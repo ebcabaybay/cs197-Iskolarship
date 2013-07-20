@@ -1,23 +1,16 @@
 momentum = angular.module "Momentum.controllers", []
 
 momentum.controller "PostStudentDetails", ['$scope', '$http', ($scope, $http) ->
-	$scope.data =
-		personid: ""
-	$scope.getStudentDetails = ->
-		alert "in"
-		$http.get("/api/poststudentdetails/#{$scope.data.personid}")
-		.success (response) ->
-			$scope.data.lastname = response
-			alert "asasA"
-		.error (response) ->
-			alert response
-			alert "There are no men"
-		
-	$scope.postStudentDetails = ->
-		$http.post("/api/poststudentdetails",
-			lastname: $scope.data.lastname,
-			firstname: $scope.data.firstname).success (response) ->
-				alert "Success!"
-			.error (response) ->
-				alert "Fail!"
+	$http.get("/api/poststudentdetails").success (response) ->
+		programids = response.progids
+		programnames = response.prognames
+		$scope.programs = []
+		programList = []
+		i = 0
+		while i <= response.progids.length-1
+			programList.push { progids:programids[i], prognames:programnames[i] }
+			i++
+		$scope.programs = programList;
+	.error (response) ->
+		alert "Error!"
 ]
