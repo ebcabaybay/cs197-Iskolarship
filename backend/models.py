@@ -14,6 +14,7 @@ class Students(Base):
     familyincome = Column(Numeric)
     reasonforneedingscholarship = Column(String)
     targetmoney = Column(Integer)
+    yearlevel = Column(Integer)
 
 class Persons(Base):
     __tablename__ = 'persons'
@@ -41,3 +42,29 @@ class Programs(Base):
     programid = Column(Integer, primary_key=True)
     name = Column(String(80))
     unitid = Column(Integer)
+  
+class Users(Base):
+    __tablename__ = 'users'
+    userid = Column(Integer, primary_key=True)
+    personid = Column(Integer)
+    login = Column(String(20))
+    password = Column(String(30))
+
+class ContactDetails(Base):
+    __tablename__ = 'contactdetails'
+    contactdetailid = Column(Integer, primary_key=True)
+    contacttypeid = Column(Integer)
+    personid = Column(Integer)
+    contactinfo = Column(String(100))
+
+class ContactTypes(Base):
+    __tablename__ = 'contacttypes'
+    contacttypeid = Column(Integer, primary_key=True)
+    name = Column(String(30))
+    description = Column(String(100))
+
+class Units(Base):
+    __tablename__ = 'units'
+    unitid = Column(Integer, primary_key=True)
+    parentunitid = Column(Integer)
+    unitname = Column(String(60))
