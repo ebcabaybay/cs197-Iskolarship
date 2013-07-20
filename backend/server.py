@@ -1,6 +1,6 @@
 # Welcome to our simple demo server!
 import json # This is a library for encoding objects into JSON
-from flask import Flask, request # This the microframework library we'll use to build our backend.
+from flask import Flask, request, jsonify # This the microframework library we'll use to build our backend.
 from flask import redirect, url_for
 from werkzeug import secure_filename
 #from werkzeug import save
@@ -10,6 +10,10 @@ from models import Persons
 from models import Scholarships
 from models import Students
 from models import Programs
+from models import ContactDetails
+from models import ContactTypes
+from models import Programs
+from models import Units
 from database import db_session, db_init
 import traceback
 import os
@@ -92,19 +96,43 @@ def postscholarship():
 
 @app.route('/poststudentdetails/', methods=['POST'], strict_slashes=False)
 def post_studentdetails():
-	lastname = request.json['lastname']
-	firstname = request.json['firstname']
-	p = Persons(lastname=lastname, firstname=firstname)
+	login = request.form['username']
+	password = request.form['password']
+	lastname = request.form['lastname']
+	firstname = request.form['firstname']
+	middlename = request.form['middlename']
+	namesuffix = request.form['namesuffix']
+	sex = request.form['sex']
+	yearlevel = request.form['yearlevel']
+	mobilenumber = request.form['mobilenumber']
+	emailadd = request.form['emailadd']
+	programid = request.form['programid']
+	p = Persons(lastname=lastname, firstname=firstname, middlename=middlename, namesuffix=namesuffix, sex=sex)
 	db_session.add(p)
 	db_session.commit()
+	u = Users(personid=p.personid, login=login, password=password)
+	db_session.add(u)
+	db_session.commit()
+	s = Students(personid=p.personid, yearlevel=yearlevel, programid=programid)
+	db_session.add(s)
+	db_session.commit()
+	c = ContactDetails(personid=p.personid, contacttypeid=1, contactinfo=mobilenumber)
+	db_session.add(c)
+	db_session.commit()
+	c = ContactDetails(personid=p.personid, contacttypeid=2, contactinfo=emailadd)
+	db_session.add(c)
+	db_session.commit()
 	return 'Ok na'
-
-@app.route('/poststudentdetails/<int:personid>/', methods=['GET'], strict_slashes=False)
-def get_studentdetails(personid):
+		
+@app.route('/poststudentdetails/', methods=['GET'], strict_slashes=False)
+def get_studentdetails():
 	try:
-		persons = db_session.query(Persons).filter_by(personid=personid).one()
-		rperson = [persons.lastname, persons.firstname]
-		return rperson[0]
+		programids = []
+		programnames = []
+		for programlist in db_session.query(Programs).all():
+			programids = programids + [programlist.programid]
+			programnames = programnames + [programlist.name]
+		return jsonify(progids = programids, prognames = programnames)
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404
 
