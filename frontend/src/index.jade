@@ -1,6 +1,6 @@
 html(ng-app="Momentum")
 	head
-		title Angular Momentum
+		title Iskolarship
 
 		// import the bootstrap stylesheets
 		link(href='/lib/bootstrap/css/bootstrap.css', rel='stylesheet')
@@ -24,18 +24,18 @@ html(ng-app="Momentum")
 		script(src='/js/exer.js', type='text/javascript')
 		script(src='/js/meli.js', type='text/javascript')
 		script(src='/js/dan.js', type='text/javascript')
-		script(src='/js/adelen.js', type='text/javascript')
-		script(src='/js/chan.js', type='text/javascript')
+		script(src='/js/adelen.js', type='text/javascript') 
 
 	body
-		.navbar.navbar-fixed-top.navbar-inverse
+		.navbar.navbar-fixed-top
 			.navbar-inner
 				.container
-					a.brand(href="#/home") Iskolarship
+					a.brand(href="#/home") 
+						i.icon-book  Iskolarship
 					.nav-collapse.collapse
 						ul.nav
 							li
-								a(href="#/home") Homez
+								a.active(href="#/home") Home
 							li
 								a(href="#/donate") Donate
 							li
@@ -44,11 +44,18 @@ html(ng-app="Momentum")
 								a(href="#/aff") Affiliations
 							li
 								a(href="#/about") About
-		.jumbotron.masthead
-			.container
-				h1 Awesome Banner
-				p.lead awesome description
-			hr
-		.row
-			.container
-				div(ng-view)
+						ul.nav.pull-right
+							li
+								a(href="#/about") 
+									i.icon-user   Login	
+							li
+								a(href="#/about")
+									i.icon-edit   Signup
+	
+		.jumbotron
+			.banner
+				.container
+					p.header Iskolarship
+					br
+					p.lead Crowd-funded education for everyone.
+		.container(ng-view,style="width:100%")
