@@ -68,3 +68,9 @@ class Units(Base):
     unitid = Column(Integer, primary_key=True)
     parentunitid = Column(Integer)
     unitname = Column(String(60))
+
+class Donors(Base):
+    __tablename__ = 'donors'
+    donorid = Column(Integer, primary_key=True)
+    personid = Column(Integer)
+    description = Column(String(50))

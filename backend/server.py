@@ -14,6 +14,7 @@ from models import ContactDetails
 from models import ContactTypes
 from models import Programs
 from models import Units
+from models import Donors
 from database import db_session, db_init
 import traceback
 import os
@@ -146,6 +147,17 @@ def get_astudentdetails(studentid):
 		return infohere
 	except sqlalchemy.orm.exc.NoResultFound:
 		return 'There are no persons', 404
+
+@app.route('/scholarships/<int:scholarshipid>/', methods=['GET'], strict_slashes=False)
+def get_ascholarshipdetails(scholarshipid):
+	try:
+		scholarship = db.session.query(Scholarships).filter_by(scholarshipid=scholarshipid).one()
+		donor = db.session.query(Donors).filter_by(donorid=scholarship.donorid).one()
+		person = db.session.query(Persons).filter_by(personid=donor.personid).one()
+		retvalue = scholarship.title + '_' + scholarship.description + '_' + str(scholarship.slots) + '_' + str(scholarship.isactive) + '_' + person.firstname + ' ' + person.middlename + ' ' + person.lastname
+		return retvalue
+	except sqlalchemy.orm.exc.NoResultFound:
+		return 'No such scholarship', 404
 
 if __name__ == '__main__':
     print 'Listening on port 8080...'
