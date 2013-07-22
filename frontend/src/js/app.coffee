@@ -21,6 +21,14 @@ momentum.config ["$routeProvider", ($routeProvider) ->
     templateUrl: "/html/view-studentdetails.html"
     controller: 'ViewStudentController'
 
+  $routeProvider.when "/home-sponsor",
+    templateUrl: "/html/home-sponsor.html"
+    controller: 'MessageController'
+
+  $routeProvider.when "/home-student",
+    templateUrl: "/html/home-student.html"
+    controller: 'MessageController'
+
   $routeProvider.when "/home",
     templateUrl: "/html/home.html"
     controller: 'MessageController'
