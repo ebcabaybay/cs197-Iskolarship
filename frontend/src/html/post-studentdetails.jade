@@ -1,116 +1,122 @@
-a(href="#/") << Back 
-h3 ## Meli code goes here
-div(mm-tabs)
-	div(mm-tab="Post Details")
-		form.sample-form#someform(action='/api/poststudentdetails', method="post", enctype='multipart/form-data')
-			h3
-				Strong Site Information
-			table
-				tr
-					td
-						| Username
-					td
-						input.message(ng-model='data.username', placeholder='Username', name='username', style='width:150px')
-				tr
-					td
-						| Password
-					td
-						input.message(ng-model='data.password', placeholder='Password', name='password', style='width:150px')
-			br			
-			h3
-				Strong Basic Information
-			table
-				tr
-					td
-						| Name
+.container(style="width:80%;")
+	.row
+		.span4.offset1
+			a(href="#/home-student") << Back to Student Homepage 
+			form.sample-form#someform(action='/api/poststudentdetails', method="post", enctype='multipart/form-data')
+				h3
+					Strong Site Information
+				table
+					tr
 						td
-							input.message(ng-model='data.lastname', placeholder='Lastname', name='lastname', style='width:150px')
+							| Username
 						td
-							input.message(ng-model='data.firstname', placeholder='Firstname', name='firstname', style='width:150px')
+							input.message(ng-model='data.username', placeholder='Username', name='username', style='width:150px')
+					tr
 						td
-							input.message(ng-model='data.middlename', placeholder='Middlename', name='middlename', style='width:150px')
+							| Password
 						td
-							input.message(ng-model='data.namesuffix', placeholder='Name Suffix', name='namesuffix', style='width:150px', value='')
-				tr
-					td
-						| Sex
-					td
-						input(type='radio', ng-model='data.sex', name='sex', value='1')
-						| Male
-						input(type='radio', ng-model='data.sex', name='sex', value='0')
-						| Female
-				tr 
-					td
-						| Degree Program
-					td
-						select(ng-model='data.programid', name='programid')
-							option(ng-repeat='progs in programs', value='{{ progs.progids }}') {{ progs.prognames }}
-				tr
-					td
-						| Year Level
-					td
-						select(ng-model='data.yearlevel', name='yearlevel')
-							option(value='1') 1st Year
-							option(value='2') 2nd Year
-							option(value='3') 3rd Year
-							option(value='4') 4th Year
-							option(value='5') 5th Year
-			h3
-				Strong Contact Information
-			table
-				tr
-					td
-						| Mobile number
-					td
-						input.message(ng-model='data.mobilenumber', placeholder='Mobile Number', name='mobilenumber', style='width:150px')
-				tr
-					td
-						| Email Address
-					td
-						input.message(ng-model='data.emailadd', placeholder='Email Address', name='emailadd', style='width:150px')
-			br
-			div
-				button.btn#submitdetails Go!
-			h3 
-				Strong Student Details
-			table
-				tr
-					td
-						| CV
-					td
-						input.message(ng-model='data.cv', placeholder='cv', name='cv', style='width:150px')
-				tr
-					td
-						| Copy of Grades
-					td
-						input.message(ng-model='data.copyofgrades', placeholder='Copy of Grades', name='copyofgrades', style='width:150px')
-				tr
-					td
-						| Description
-					td
-						textarea.message(ng-model='data.description', placeholder='description', name='description', style='width:500px', style='height:200px')
-			h3
-				Strong Bank Details
-			table
-				tr
-					td
-						| Bank
-					td
-						select(ng-model='data.bank', name='bank')
-							option(value='1') Landbank
-				tr
-					td
-						| Account number
-					td
-						input.message(ng-model='data.accountnumber', placeholder='Account Number', name='accountnumber', style='width:150px')
-	div(mm-tab="Get Details")
-		p
-			strong In the database
-		form.sample-form#getdetails(ng-submit="getStudentDetails()")
-			label ID
-			input.id(ng-model='data.personid', type='integer', name='personid', value=1)
-			label Message
-			textarea.message(ng-model='data.lastname', disabled, name='lastname')
-			// textarea.message(ng-model='data.firstname', disabled, name='firstname')
-			div
-				button.btn#getbutton Go!
+							input.message(ng-model='data.password', placeholder='Password', name='password', style='width:150px')
+				br			
+				h3
+					Strong Basic Information
+				table
+					tr
+						td
+							| Name
+							td
+								input.message(ng-model='data.lastname', placeholder='Lastname', name='lastname', style='width:150px')
+							td
+								input.message(ng-model='data.firstname', placeholder='Firstname', name='firstname', style='width:150px')
+							td
+								input.message(ng-model='data.middlename', placeholder='Middlename', name='middlename', style='width:150px')
+							td
+								input.message(ng-model='data.namesuffix', placeholder='Name Suffix', name='namesuffix', style='width:150px', value='')
+					tr
+						td
+							| Sex
+						td
+							input(type='radio', ng-model='data.sex', name='sex', value='1')
+							| Male
+							input(type='radio', ng-model='data.sex', name='sex', value='0')
+							| Female
+					tr 
+						td
+							| Degree Program
+						td
+							select(ng-model='data.programid', name='programid')
+								option(ng-repeat='progs in programs', value='{{ progs.progids }}') {{ progs.prognames }}
+					tr
+						td
+							| Year Level
+						td
+							select(ng-model='data.yearlevel', name='yearlevel')
+								option(value='1') 1st Year
+								option(value='2') 2nd Year
+								option(value='3') 3rd Year
+								option(value='4') 4th Year
+								option(value='5') 5th Year
+				h3
+					Strong Contact Information
+				table
+					tr
+						td
+							| Mobile number
+						td
+							input.message(ng-model='data.mobilenumber', placeholder='Mobile Number', name='mobilenumber', style='width:150px')
+					tr
+						td
+							| Email Address
+						td
+							input.message(ng-model='data.emailadd', placeholder='Email Address', name='emailadd', style='width:150px')
+				br
+				div
+					button.btn#submitdetails Go!
+				h3 
+					Strong Student Details
+				table
+					tr
+						td
+							| CV
+						td
+							input.message(ng-model='data.cv', placeholder='cv', name='cv', style='width:150px')
+					tr
+						td
+							| Copy of Grades
+						td
+							input.message(ng-model='data.copyofgrades', placeholder='Copy of Grades', name='copyofgrades', style='width:150px')
+					tr
+						td
+							| Description
+						td
+							textarea.message(ng-model='data.description', placeholder='description', name='description', style='width:500px', style='height:200px')
+				h3
+					Strong Bank Details
+				table
+					tr
+						td
+							| Bank
+						td
+							select(ng-model='data.bank', name='bank')
+								option(value='1') Landbank
+					tr
+						td
+							| Account number
+						td
+							input.message(ng-model='data.accountnumber', placeholder='Account Number', name='accountnumber', style='width:150px')
+		div(mm-tab="Get Details")
+			p
+				strong In the database
+			form.sample-form#getdetails(ng-submit="getStudentDetails()")
+				label ID
+				input.id(ng-model='data.personid', type='integer', name='personid', value=1)
+				label Message
+				textarea.message(ng-model='data.lastname', disabled, name='lastname')
+				// textarea.message(ng-model='data.firstname', disabled, name='firstname')
+				div
+					button.btn#getbutton Go!
+footer.modal-footer(style="text-align:center")
+	br
+	p College of Engineering
+	p University of the Philippines - Diliman
+	p Copyright 2013
+	br

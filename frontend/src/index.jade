@@ -46,16 +46,26 @@ html(ng-app="Momentum")
 								a(href="#/about") About
 						ul.nav.pull-right
 							li
-								a(href="#/about") 
-									i.icon-user   Login	
+								a(href="#/home-sponsor") Home-Sponsor
 							li
-								a(href="#/about")
+								a(href="#/home-student") Home-Student
+							li.dropdown
+								a.dropdown-toggle(href="",data-toggle="dropdown") 
+									i.icon-user   Login
+								.dropdown-menu(style="padding:20px")
+									form(action="temp",method="post")
+										input#username_id(type="text",name="username_id",style="height:30px;margin-top:15px",placeholder="Username")
+										input#password(type="password",name="password",style="height:30px",placeholder="Password")
+										input#remember(type="checkbox",name="remember",style="float:left;margin-right:10px")
+										label.string.optional(for="remember") Remember me
+										input.btn.btn-primary(type="submit",value="Log in")
+							li
+								a(href="")
 									i.icon-edit   Signup
 	
 		.jumbotron
 			.banner
 				.container
-					p.header Iskolarship
-					br
-					p.lead Crowd-funded education for everyone.
+					h1 Iskolarship
+					p.lead Crowd-funded education for college students
 		.container(ng-view,style="width:100%")

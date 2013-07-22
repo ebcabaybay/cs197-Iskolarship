@@ -1,48 +1,60 @@
-div
+.container(style="width:80%;")
 	.row
-		form.sample-form#post-form(action='/api/postscholarship', method="post", enctype='multipart/form-data')
-			textarea.message(ng-model='data.title', placeholder='Title', name='title')
+		.span3.offset4
+			a(href="#/home-sponsor") << Back to Sponsor Homepage
 			br
-			table
-				tr
-					td 
-						input#degree_cb(type='checkbox', name='degree_cb') 
-						| Degree program
-
-					td
-						input#gender_cb(type='checkbox', name='gender_cb') 
-						| Gender
-				tr
-					td
-						select#degree_choice(style="display:none", name='degree_choice')
-							option(value="BS ComSci") BS ComSci
-							option(value="BS Math") BS Math
-					td
-						label.gc(for='gender_choice_M',style="display:none") Male
-						input.gc#gender_choice_M(type='radio', name='gender_choice', value='M',style="display:none", checked) 
-						br
-						label.gc(for='gender_choice_F',style="display:none") Female
-						input.gc#gender_choice_F(type='radio', name='gender_choice', value='F',style="display:none")
-				tr
-					td
-						input#income_cb(type='checkbox', name='income_cb') 
-						| Family income
-					td
-						input#year_cb(type='checkbox', name='year_cb') 
-						| Year level
-				tr
-					td#income_choice(style="display:none")
-						| Less than
-						input#income_input(type='text', placeholder='Max amount in Pesos', name="max_income")
-					td
-						select#year_choice(style="display:none", name='year_choice')
-							option(value="1st year") First Year
-							option(value="2nd year") Second Year
-							option(value="3rd year") Third Year
-							option(value="4th year") Fourth Year
-			textarea.message(ng-model='data.description', placeholder='Description', name='description')
 			br
-			input(type='file', name='file')
-			br
-			div
-				button.btn#post-button Create Scholarshipz
+			form.sample-form#post-form(action='/api/postscholarship', method="post", enctype='multipart/form-data')
+				
+				textarea.message(ng-model='data.title', placeholder='Title', name='title')
+				br
+				table(style="width:100%")
+					tr
+						td 
+							input#degree_cb(type='checkbox', name='degree_cb') 
+							| Degree program
+						td
+							input#gender_cb(type='checkbox', name='gender_cb') 
+							| Gender
+					tr
+						td
+							select#degree_choice(style="display:none", name='degree_choice')
+								option(value="BS ComSci") BS ComSci
+								option(value="BS Math") BS Math
+						td
+							label.gc(for='gender_choice_M',style="display:none") Male
+							input.gc#gender_choice_M(type='radio', name='gender_choice', value='M',style="display:none", checked) 
+							br
+							label.gc(for='gender_choice_F',style="display:none") Female
+							input.gc#gender_choice_F(type='radio', name='gender_choice', value='F',style="display:none")
+					tr
+						td
+							input#income_cb(type='checkbox', name='income_cb') 
+							| Family income
+						td
+							input#year_cb(type='checkbox', name='year_cb') 
+							| Year level
+					tr
+						td#income_choice(style="display:none")
+							| Less than
+							input#income_input(type='text', placeholder='Max amount in Pesos', name="max_income")
+						td
+							select#year_choice(style="display:none", name='year_choice')
+								option(value="1st year") First Year
+								option(value="2nd year") Second Year
+								option(value="3rd year") Third Year
+								option(value="4th year") Fourth Year
+				br
+				textarea.message(ng-model='data.description', placeholder='Description', name='description')
+				br
+				input(type='file', name='file')
+				br
+				br
+				div(style="text-align:center")
+					button.btn.btn-primary#post-button Create Scholarship
+footer.modal-footer(style="text-align:center")
+	br
+	p College of Engineering
+	p University of the Philippines - Diliman
+	p Copyright 2013
+	br

@@ -1,10 +1,233 @@
-h2 Basic Features
-ul
- li
-  a(href="#/post-scholarship") Post Scholarship
- li 
-  a(href="#/post-studentdetails") Post Student Details
- li
-  a(href="#/view-scholarships") View Scholarships
- li
-  a(href="#/view-studentdetails") View Student Details
+.container(style="width:80%")
+ br
+ .span10
+  .p.lead New Scholars
+   span.pull-right
+     a.btn View all Scholars
+   hr
+  .row-fluid(align="center")
+   #myCarousel.carousel.slide
+    .carousel-inner
+     .item.active
+      .container(style="width:85%")
+       .span4
+         .well.profile
+           .picture
+           .name
+            | Name of Student
+            br
+            | Name of Scholarship
+            br
+            br
+            a.btn.btn-primary Read more
+       .span4
+         .well.profile
+           .picture
+           .name
+            | Name of Student
+            br
+            | Name of Scholarship
+            br
+            br
+            a.btn.btn-primary Read More
+       .span4
+         .well.profile
+           .picture
+           .name
+            | Name of Student
+            br
+            | Name of Scholarship
+            br
+            br
+            a.btn.btn-primary Read More
+     .item
+      .container(style="width:85%;")
+       .span4
+         .well.profile
+           .picture
+           .name
+            | Name of Student
+            br
+            | Name of Scholarship
+            br
+            br
+            a.btn.btn-primary Read more
+       .span4
+         .well.profile
+           .picture
+           .name
+            | Name of Student
+            br
+            | Name of Scholarship
+            br
+            br
+            a.btn.btn-primary Read More
+       .span4
+         .well.profile
+           .picture
+           .name
+            | Name of Student
+            br
+            | Name of Scholarship
+            br
+            br
+            a.btn.btn-primary Read More    
+    a.carousel-control.left(href="/home#myCarousel",data-slide="prev") &lsaquo;
+    a.carousel-control.right(href="/home#myCarousel",data-slide="next") &rsaquo;  
+  br
+  .p.lead New Cash Donation Grantees
+   span.pull-right
+     a.btn View all Cash Donation Grantees
+  hr
+  .row-fluid(align="center")
+   #myCarousel2.carousel.slide
+    .carousel-inner
+     .item.active
+      .container(style="width:85%")
+       .span4
+         .well.profile2
+          .picture
+          .name
+          | Name of Student
+          br
+          span.label.label-success Fully Funded!
+          br
+          br        
+          b Money Raised | # of Donors
+          br
+          div.progress
+           div.bar.bar-success(style="width: 100%")
+          a.btn.btn-success(href="#/view-studentdetails") Read More
+       .span4
+         .well.profile2
+          .picture
+          .name
+          | Name of Student
+          br
+          span.label.label-success Fully Funded!
+          br
+          br        
+          b Money Raised | # of Donors
+          br
+          div.progress
+           div.bar.bar-success(style="width: 100%")
+          a.btn.btn-success(href="#/view-studentdetails") Read More
+       .span4
+         .well.profile2
+          .picture
+          .name
+          | Name of Student
+          br
+          span.label.label-success Fully Funded!
+          br
+          br        
+          b Money Raised | # of Donors
+          br
+          div.progress
+           div.bar.bar-success(style="width: 100%")
+          a.btn.btn-success(href="#/view-studentdetails") Read More
+     .item
+      .container(style="width:85%;")
+       .span4
+         .well.profile2
+          .picture
+          .name
+          | Name of Student
+          br
+          span.label.label-success Fully Funded!
+          br
+          br        
+          b Money Raised | # of Donors
+          br
+          div.progress
+           div.bar.bar-success(style="width: 100%")
+          a.btn.btn-success(href="#/view-studentdetails") Read More
+       .span4
+         .well.profile2
+          .picture
+          .name
+          | Name of Student
+          br
+          span.label.label-success Fully Funded!
+          br
+          br        
+          b Money Raised | # of Donors
+          br
+          div.progress
+           div.bar.bar-success(style="width: 100%")
+          a.btn.btn-success(href="#/view-studentdetails") Read More
+       .span4
+         .well.profile2
+          .picture
+          .name
+          | Name of Student
+          br
+          span.label.label-success Fully Funded!
+          br
+          br        
+          b Money Raised | # of Donors
+          br
+          div.progress
+           div.bar.bar-success(style="width: 100%")
+          a.btn.btn-success(href="#/view-studentdetails") Read More   
+    a.carousel-control.left(href="/home#myCarousel2",data-slide="prev") &lsaquo;
+    a.carousel-control.right(href="/home#myCarousel2",data-slide="next") &rsaquo;
+ .span10
+  hr
+  h2 Donate
+   span.pull-right
+     input.search-query.span2(type="text",placeholder="Search",style="height:30px")
+   br
+  .row-fluid(align="center")
+   .span4
+     .well.profile2
+       .picture
+       .name
+        | Name of Student
+        br
+        span.label.label-info On-going
+        br
+        br        
+        b Money Raised | # of Donors
+        br
+        div.progress
+         div.bar(style="width: 60%")
+        a.btn.btn-primary(href="#/view-studentdetails") Donate
+   .span4
+     .well.profile2
+       .picture
+       .name
+        | Name of Student
+        br
+        span.label.label-info On-going
+        br
+        br
+        b Money Raised | # of Donors
+        br
+        div.progress
+         div.bar(style="width: 10%")
+        a.btn.btn-primary(href="#/view-studentdetails") Donate
+   .span4
+     .well.profile2
+       .picture
+       .name
+        | Name of Student
+        br
+        span.label.label-info On-going
+        br
+        br
+        b Money Raised | # of Donors
+        br
+        div.progress
+         div.bar(style="width: 25%")
+        a.btn.btn-primary(href="#/view-studentdetails") Donate
+   a.btn.btn-large.btn-primary View All Students Needing Cash Donations
+   br
+   br
+   br
+footer.modal-footer(style="text-align:center")
+ br
+ p College of Engineering
+ p University of the Philippines - Diliman
+ p Copyright 2013
+ br
