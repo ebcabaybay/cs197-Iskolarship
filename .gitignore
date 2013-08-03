@@ -2,6 +2,7 @@
 ###################
 *.vagrant
 Vagrantfile
+*.~*
 
 # Compiled source #
 ###################
